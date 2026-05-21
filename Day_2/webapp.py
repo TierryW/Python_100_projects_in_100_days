@@ -2,7 +2,9 @@ import streamlit as st
 
 st.title("Welcome to the tip calculator!")
 
-total_bill = st.number_input("What was the total bill? $", min_value=0, format="%.2f")
+# min_value = 0.0 // Aceita valores tipo float
+# min_value = 0 // Entende que os valores serão inteiros
+total_bill = st.number_input("What was the total bill? $", min_value=0.0, format="%.2f")
 tip = st.selectbox("How much tipp would you like to give? 10, 12, or 15?", [10, 12, 15])
 total_peoples = st.number_input("How many people to split the bill? ", min_value=1, step=1)
 
