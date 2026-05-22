@@ -2,10 +2,11 @@
 
 ## Day 1: Band Name Generator
 
-## Day 2:
+
+## Day 2: Tip Calculator
 
 
-## Day 3:
+## Day 3: Treasure Island
 
 
 ## Day 4:
