@@ -25,7 +25,7 @@ if st.session_state.scene == "start":
 
 elif st.session_state.scene == "lake":
     st.markdown("### You reach a dark lake with mist floating above the water.")     
-    st.markdwon("### There is a small abandoned boat nearby...")
+    st.markdown("### There is a small abandoned boat nearby...")
     
     col1, col2 = st.columns(2)
     with col1:
