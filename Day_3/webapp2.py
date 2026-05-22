@@ -72,7 +72,7 @@ elif st.session_state.scene == "temple":
 
 elif st.session_state.scene == "hole":
     st.error("You fall into a hidden hole covered with leaves...")
-    st.markdown("## 💀 Game Over")
+    st.markdown("### 💀 Game Over")
 
     if st.button("🔄 Restart"):
         restart()
@@ -80,7 +80,7 @@ elif st.session_state.scene == "hole":
 
 elif st.session_state.scene == "trout":
     st.error("Something moves beneath the water...")
-    st.markdown("## 💀 Game Over")
+    st.markdown("### 💀 Game Over")
 
     if st.button("🔄 Restart"):
         restart()
@@ -88,14 +88,14 @@ elif st.session_state.scene == "trout":
 
 elif st.session_state.scene == "fire":
     st.error("🔥 As soon as you enter, flames burst from t he walls. You are burned alive...")
-    st.markdown("## 💀 Game Over")
+    st.markdown("### 💀 Game Over")
     if st.button("🔄 Restart"):
         restart()
         st.rerun()
 
 elif st.session_state.scene == "beasts":
     st.error("🐺 Hungry beasts emerge from the darkness and attack you...")
-    st.markdown("## 💀 Game Over")
+    st.markdown("### 💀 Game Over")
     if st.button("🔄 Restart"):
         restart()
         st.rerun()
@@ -104,7 +104,7 @@ elif st.session_state.scene == "treasure":
     st.success("Inside the yellow room you find mountains of gold and jewels!")
     st.success("💰 YOU FOUND THE TREASURE!")
     st.balloons
-    st.markdown("## 🎉 You Win!")
+    st.markdown("### 🎉 You Win!")
     if st.button("🔄 Play Again"):
         restart()
         st.rerun()
