@@ -9,6 +9,7 @@ def restart():
     st.session_state.scene == "start"
 
 st.title("🏝️ Treasure Island!")
+st.subheader("Your mission is to find the treasure.")
 
 if st.session_state.scene == "start":
     st.write("""
