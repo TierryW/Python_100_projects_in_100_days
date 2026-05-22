@@ -75,24 +75,27 @@ elif st.session_state.scene == "trout":
         st.rerun()
 
 elif st.session_state.scene == "fire":
-    st.markdown("### 🔥 As soon as you enter, flames burst from t he walls. You are burned alive...")
+    st.markdown("### As soon as you step through the red door...")
+    st.markdown("### 🔥 Flames erupt from the walls and floor. You are burned alive.")
     st.markdown("### 💀 Game Over")
     if st.button("🔄 RESTART"):
         st.session_state.scene = "start"
         st.rerun()
 
 elif st.session_state.scene == "beasts":
-    st.markdown("### 🐺 Hungry beasts emerge from the darkness and attack you...")
+    st.markdown("### As soon as you step through the blue door...")
+    st.markdown("### 🐺 Hungry beasts emerge from the darkness and attack you.")
     st.markdown("### 💀 GAME OVER")
     if st.button("🔄 RESTART"):
         st.session_state.scene = "start"
         st.rerun()
 
 elif st.session_state.scene == "treasure":
-    st.markdown("### Inside the yellow room you find mountains of gold and jewels!")
+    st.markdown("### Inside the yellow room you find mountains of gold and jewels...")
     st.markdown("### 💰 YOU FOUND THE TREASURE!")
     st.balloons()
-    st.markdown("### 🎉 You Win!")
+    st.markdown("### You Win!")
+    st.markdown("### Good luck getting off that island!")
     if st.button("🔄 PLAY AGAIN"):
         st.session_state.scene = "start"
         st.rerun()
