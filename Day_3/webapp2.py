@@ -5,18 +5,12 @@ st.set_page_config(page_title="Treasure Island", page_icon="🏝️")
 if "scene" not in st.session_state:
     st.session_state.scene = "start"
 
-def restart():
-    st.session_state.scene == "start"
-
 st.title("🏝️ Treasure Island!")
 
 if st.session_state.scene == "start":
-    st.markdown("### Your mission is to find the treasure.")
-    st.write("""
-    You arrive at a mysterious island during a stormy night.
-
-    Two paths appear in front of you...
-        """)
+    st.markdown("### Your mission is to find the treasure." \
+    "### You arrive at a mysterious island during a stormy night." \
+    "### Two paths appear in front of you...")
     
     col1, col2 = st.columns(2)
     with col1:
