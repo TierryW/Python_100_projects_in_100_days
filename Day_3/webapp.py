@@ -66,5 +66,5 @@ if choise1 == "Left":
         st.error("\nGame Over.")
 
 elif choise1 == "Right":
-    st.text("\n You fall into a hidden hole covered with leaves.")
+    st.text("\n You fall into a hidden hole covered with leaves.\n")
     st.error("\n Game Over.")
