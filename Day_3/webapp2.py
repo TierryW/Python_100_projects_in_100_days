@@ -9,9 +9,9 @@ def restart():
     st.session_state.scene == "start"
 
 st.title("🏝️ Treasure Island!")
-st.markdown("### Your mission is to find the treasure.")
 
 if st.session_state.scene == "start":
+    st.markdown("### Your mission is to find the treasure.")
     st.write("""
     You arrive at a mysterious island during a stormy night.
 
