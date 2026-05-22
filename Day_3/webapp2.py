@@ -29,13 +29,13 @@ elif st.session_state.scene == "lake":
     
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("⏳ WAIT"):
-            st.session_state.scene = "temple"
-            st.rerun()
-
-    with col2:
         if st.button("🏊 SWIN"):
             st.session_state.scene = 'trout'
+            st.rerun()
+    
+    with col2:
+        if st.button("⏳ WAIT"):
+            st.session_state.scene = "temple"
             st.rerun()
 
 elif st.session_state.scene == "temple":
