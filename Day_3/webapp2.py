@@ -75,7 +75,7 @@ elif st.session_state.scene == "hole":
     st.markdown("### 💀 Game Over")
 
     if st.button("🔄 Restart"):
-        restart()
+        st.session_state.scene = "start"
         st.rerun()
 
 elif st.session_state.scene == "trout":
@@ -83,21 +83,21 @@ elif st.session_state.scene == "trout":
     st.markdown("### 💀 Game Over")
 
     if st.button("🔄 Restart"):
-        restart()
+        st.session_state.scene = "start"
         st.rerun()
 
 elif st.session_state.scene == "fire":
     st.error("🔥 As soon as you enter, flames burst from t he walls. You are burned alive...")
     st.markdown("### 💀 Game Over")
     if st.button("🔄 Restart"):
-        restart()
+        st.session_state.scene = "start"
         st.rerun()
 
 elif st.session_state.scene == "beasts":
     st.error("🐺 Hungry beasts emerge from the darkness and attack you...")
     st.markdown("### 💀 Game Over")
     if st.button("🔄 Restart"):
-        restart()
+        st.session_state.scene = "start"
         st.rerun()
 
 elif st.session_state.scene == "treasure":
@@ -106,5 +106,5 @@ elif st.session_state.scene == "treasure":
     st.balloons()
     st.markdown("### 🎉 You Win!")
     if st.button("🔄 Play Again"):
-        restart()
+        st.session_state.scene = "start"
         st.rerun()
