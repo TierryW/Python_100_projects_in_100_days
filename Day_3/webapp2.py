@@ -9,7 +9,7 @@ def restart():
     st.session_state.scene == "start"
 
 st.title("🏝️ Treasure Island!")
-st.subheader("Your mission is to find the treasure.")
+st.markdown("### Your mission is to find the treasure.")
 
 if st.session_state.scene == "start":
     st.write("""
@@ -103,7 +103,7 @@ elif st.session_state.scene == "beasts":
 elif st.session_state.scene == "treasure":
     st.success("Inside the yellow room you find mountains of gold and jewels!")
     st.success("💰 YOU FOUND THE TREASURE!")
-    st.balloons
+    st.balloons()
     st.markdown("### 🎉 You Win!")
     if st.button("🔄 Play Again"):
         restart()
