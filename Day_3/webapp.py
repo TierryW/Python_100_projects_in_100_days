@@ -28,7 +28,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 
 st.text("\n You arrive at a mysterious island."
         "\n There are two paths ahead.")
-choise1 = st.selectbox("Do you go LEFT or RIGHT?\n"
+choise1 = st.selectbox("Do you go LEFT or RIGHT?\n",
             ["Select an Option", "Left", "Right"])
 
 if choise1 == "Left":
