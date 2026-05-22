@@ -8,9 +8,7 @@ if "scene" not in st.session_state:
 st.title("🏝️ Treasure Island!")
 
 if st.session_state.scene == "start":
-    st.markdown("### Your mission is to find the treasure.\n" \
-    "You arrive at a mysterious island during a stormy night.\n" \
-    "Two paths appear in front of you...")
+    st.markdown("### Your mission is to find the treasure.\n You arrive at a mysterious island during a stormy night.\n Two paths appear in front of you...")
     
     col1, col2 = st.columns(2)
     with col1:
