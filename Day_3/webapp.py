@@ -48,8 +48,7 @@ if choise1 == "Left":
                 ["Select an Option", "Red", "Blue", "Yellow"])
         
         if choise3 == "Yellow":
-            st.success("\n Inside the yellow room you find mountains of gold and jewels!\n"
-                "YOU FOUND THE TREASURE! YOU WIN!")
+            st.success("\n Inside the yellow room you find mountains of gold and jewels!\nYOU FOUND THE TREASURE! YOU WIN!")
             st.balloons()
         
         elif choise3 == "Red":
