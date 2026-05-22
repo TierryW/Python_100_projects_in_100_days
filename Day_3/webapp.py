@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(page_title="Treasure Island", page_icon="🏝️")
 st.title("🏝️ Treasure Island!")
 st.subheader("Your mission is to find the treasure.")
-st.text(r'''
+st.text('''
 *******************************************************************************
           |                   |                  |                     |
  _________|________________.=""_;=.______________|_____________________|_______
@@ -26,9 +26,10 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************
     ''')
 
-choise1 = st.selectbox("\n You arrive at a mysterious island."
-                "\n There are two paths ahead.\n",
-                ["Select an Option", "Left", "Right"])
+st.text("\n You arrive at a mysterious island."
+        "\n There are two paths ahead.")
+choise1 = st.selectbox("Do you go LEFT or RIGHT?\n"
+            ["Select an Option", "Left", "Right"])
 
 if choise1 == "Left":
     st.text("\n You reach a dark lake with mist floating above the water."
@@ -38,25 +39,25 @@ if choise1 == "Left":
             ["Select an Option", "Wait", "Swin"])
     if choise2 == "Wait":
         st.text(r'''
-                \n A ghostly boatman silently takes tou to the other side.
-                \n You arrivve at an ancient temple with 3 glowing doors.\n
+                A ghostly boatman silently takes tou to the other side.
+                You arrivve at an ancient temple with 3 glowing doors.
                 🔴 RED      🔵 BLUE      🟡 YELLOW
                 ''')
 
         choise3 = st.selectbox("Wich door do you choose?",
                 ["Select an Option", "Red", "Blue", "Yellow"])
         
-        if choise3 == "yellow":
+        if choise3 == "Yellow":
             st.success("\n Inside the yellow room you find mountains of gold and jewels!\n"
                 "YOU FOUND THE TREASURE! YOU WIN!")
             st.balloons()
         
-        elif choise3 == "red":
+        elif choise3 == "Red":
             st.text("\n As soon as you enter, flames burst from t he walls.")
             st.error("\n You are burned alive.\n"
                 "Game Over.")
             
-        elif choise3 == "blue":
+        elif choise3 == "Blue":
             st.text("\n Hungry beasts emerge from the darkness and attack you...")
             st.error("\n Game Over.")
     
