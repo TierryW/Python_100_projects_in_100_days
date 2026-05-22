@@ -30,7 +30,7 @@ if st.session_state.scene == "start":
             st.rerun()
 
 elif st.session_state.scene == "lake":
-    st.write(""""
+    st.write("""
             You reach a dark lake with mist floating above the water.
             
             There is a small abandoned boat nearby...
