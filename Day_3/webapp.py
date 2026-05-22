@@ -63,7 +63,7 @@ if choise1 == "Left":
             st.error("\n Game Over.")
     
     elif choise2 == "Swin":
-        st.text("\n Something movves beneath the water...")
+        st.text("\n Something moves beneath the water...")
         st.error("\nGame Over.")
 
 elif choise1 == "Right":
