@@ -221,4 +221,4 @@ __marimo__/
 
 .vscode
 .devcontainer
-.devcontainer
+.devcontainer.json
