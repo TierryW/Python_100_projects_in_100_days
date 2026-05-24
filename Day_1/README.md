@@ -3,6 +3,7 @@
 ## Day 1: Band Name Generator
 ### 📌 About the Project
 A simple web application that generates a band name using the user's city and pet name.
+I first developed the game using terminal inputs and later improved it with a visual interface using Streamlit.
 
 ### 🧠 What I Learned
 - Variables in Python

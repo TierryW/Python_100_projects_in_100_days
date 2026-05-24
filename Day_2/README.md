@@ -11,6 +11,7 @@ The user enters:
 - The number of people splitting the bill
 
 The application then calculates and displays how much each person should pay.
+I first developed the game using terminal inputs and later improved it with a visual interface using Streamlit.
 
 ### 🧠 What I Learned
 - Conditional statements using `if`
