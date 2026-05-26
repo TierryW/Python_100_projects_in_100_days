@@ -1,6 +1,9 @@
 import streamlit as st
 import random
 
+for key in list(st.session_state.keys()):
+    del st.session_state[key]
+
 st.set_page_config(page_title="Rock Paper Scissors (RPS)", page_icon="✊🤚✌️")
 
 rock_art = r'''
