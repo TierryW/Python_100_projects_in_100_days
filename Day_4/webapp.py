@@ -72,7 +72,7 @@ elif st.session_state.scene == "result":
 
     st.markdown("### RESULT")
 
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns([3, 3])
 
     with col1:
         st.markdown("### 👤 YOU")
