@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.set_page_config(page_title="Tip Calculator", page_icon="🧮")
 st.title("Welcome to the tip calculator!")
 
 # min_value = 0.0 // Aceita valores tipo float

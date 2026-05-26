@@ -1,11 +1,11 @@
 import streamlit as st
 
-st.set_page_config(page_title="Treasure Island", page_icon="🏝️")
+st.set_page_config(page_title="Treasure Island 2", page_icon="🏝️")
 
 if "scene" not in st.session_state:
     st.session_state.scene = "start"
 
-st.title("🏝️ Treasure Island!")
+st.title("🏝️ Treasure Island 2!")
 
 if st.session_state.scene == "start":
     st.markdown("### Your mission is to find the treasure.")

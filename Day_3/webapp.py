@@ -1,7 +1,7 @@
 import streamlit as st
 
-st.set_page_config(page_title="Treasure Island", page_icon="🏝️")
-st.title("🏝️ Treasure Island!")
+st.set_page_config(page_title="Treasure Island 1", page_icon="🏝️")
+st.title("🏝️ Treasure Island 1!")
 st.subheader("Your mission is to find the treasure.")
 treasure_art = r'''
 *******************************************************************************
