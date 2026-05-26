@@ -41,7 +41,7 @@ if "player_choice" not in st.session_state:
 if "computer_choice" not in st.session_state:
     st.session_state.computer_choice = ""
 
-if st.session_state == "start":
+if st.session_state.scene == "start":
     st.markdown("### Welcome to Rock Paper Scissors (RPS)")
     st.markdown("### What do you choose?")
 
