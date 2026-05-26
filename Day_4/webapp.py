@@ -30,7 +30,7 @@ scissors_art = r'''
 ---.__(___) 
 '''
 
-choises = ["ROCK", "PAPER", "SCISSORS"]
+choices = ["ROCK", "PAPER", "SCISSORS"]
 
 if "scene" not in st.session_state:
     st.session_state.scene = "start"
@@ -65,7 +65,7 @@ if st.session_state.scene == "start":
             st.rerun()
 
 elif st.session_state.scene == "result":
-    st.session_state.computer_choice = random.choice(choises)
+    st.session_state.computer_choice = random.choice(choices)
 
     player = st.session_state.player_choice
     computer = st.session_state.computer_choice
@@ -88,13 +88,13 @@ elif st.session_state.scene == "result":
     with col2:
         st.markdown("### 🤖 COMPUTER")
         if computer == "ROCK":
-            st.code(rock_art)
+            st.text(rock_art)
         
         elif computer == "PAPER":
-            st.code(paper_art)
+            st.text(paper_art)
 
         elif computer == "SCISSORS":
-            st.code(scissors_art)
+            st.text(scissors_art)
 
     if player == computer:
         st.warning("🤝 IT'S A DRAW!")
