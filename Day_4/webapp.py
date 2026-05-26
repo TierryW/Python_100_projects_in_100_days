@@ -72,7 +72,7 @@ elif st.session_state.scene == "result":
 
     st.markdown("### RESULT")
 
-    col1, col2 = st.columns([3, 3])
+    col1, col2 = st.columns(2)
 
     with col1:
         st.markdown("### 👤 YOU")
@@ -88,13 +88,13 @@ elif st.session_state.scene == "result":
     with col2:
         st.markdown("### 🤖 COMPUTER")
         if computer == "ROCK":
-            st.text(rock_art)
+            st.code(rock_art)
         
         elif computer == "PAPER":
-            st.text(paper_art)
+            st.code(paper_art)
 
         elif computer == "SCISSORS":
-            st.text(scissors_art)
+            st.code(scissors_art)
 
     if player == computer:
         st.warning("🤝 IT'S A DRAW!")
