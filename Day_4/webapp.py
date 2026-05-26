@@ -33,7 +33,7 @@ scissors_art = r'''
 choises = ["ROCK", "PAPER", "SCISSORS"]
 
 if "scene" not in st.session_state:
-    st.session_state = "start"
+    st.session_state.scene = "start"
 
 if "player_choice" not in st.session_state:
     st.session_state.player_choice = ""
