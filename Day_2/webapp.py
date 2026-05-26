@@ -10,7 +10,7 @@ tip = st.selectbox("How much tipp would you like to give? 10, 12, or 15?", [10, 
 # tip = st.number_input("How much tipp would you like to give? 10, 12, or 15?", min_value=0, step=1)
 total_peoples = st.number_input("How many people to split the bill? ", min_value=1, step=1)
 
-if st.button("Perform Calculation"):
+if st.button("PERFORM CALCULATION"):
     # if tip not in [10, 12, 15]:
     #     print("Error! Choose between 10, 12, or 15.")
     
