@@ -9,7 +9,7 @@
 ## Day 3: Treasure Island
 
 
-## Day 4:
+## Day 4: Rock Paper Scissors (RPS)
 
 
 ## Day 5:
