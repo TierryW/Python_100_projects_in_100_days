@@ -35,11 +35,11 @@ choises = ["ROCK", "PAPER", "SCISSORS"]
 if "scene" not in st.session_state:
     st.session_state = "start"
 
-if "player_choise" not in st.session_state:
-    st.session_state.player_choise = ""
+if "player_choice" not in st.session_state:
+    st.session_state.player_choice = ""
 
-if "computer_choise" not in st.session_state:
-    st.session_state.computer_choise = ""
+if "computer_choice" not in st.session_state:
+    st.session_state.computer_choice = ""
 
 if st.session_state == "start":
     st.markdown("### Welcome to Rock Paper Scissors (RPS)")
@@ -48,27 +48,27 @@ if st.session_state == "start":
     col1, col2, col3 = st.columns(3)
     with col1:
         if st.button("✊ ROCK"):
-            st.session_state.player_choise = "ROCK"
+            st.session_state.player_choice = "ROCK"
             st.session_state.scene = "result" 
             st.rerun()
 
     with col2:
         if st.button("🤚 PAPER"):
-            st.session_state.player_choise = "PAPER"
+            st.session_state.player_choice = "PAPER"
             st.session_state.scene = "result" 
             st.rerun()
 
     with col3:
         if st.button("✌️ SCISSORS"):
-            st.session_state.player_choise = "SCISSORS"
+            st.session_state.player_choice = "SCISSORS"
             st.session_state.scene = "result" 
             st.rerun()
 
 elif st.session_state.scene == "result":
-    st.session_state.computer_choise = random.choice(choises)
+    st.session_state.computer_choice = random.choice(choises)
 
-    player = st.session_state.player_choise
-    computer = st.session_state.computer_choise
+    player = st.session_state.player_choice
+    computer = st.session_state.computer_choice
 
     st.markdown("### RESULT")
 
