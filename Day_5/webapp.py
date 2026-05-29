@@ -13,9 +13,12 @@ symbols = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '=', '+']
 st.set_page_config(page_title="PyPassword Generator", page_icon="🔑")
 st.title("🔑 PyPassword Generator")
 
-n_letters = st.number_input("How many letters would you like in your password?", min_value=1, step=1)
-n_symmbols = st.number_input("How many symbols would you like?", min_value=1, step=1)
-n_numbers = st.number_input("How many numbers would you like?", min_value=1, step=1)
+st.markdown("### How many letters would you like in your password?")
+n_letters = st.number_input(min_value=1, step=1)
+st.markdown("### How many symbols would you like?")
+n_symmbols = st.number_input(min_value=1, step=1)
+st.markdown("### How many numbers would you like?")
+n_numbers = st.number_input(min_value=1, step=1)
 
 if st.button("GENERATOR"):
     password_list = []
@@ -34,8 +37,5 @@ if st.button("GENERATOR"):
     for char in password_list:
         password += char
 
-    st.text("Your password is: ")
-    password = r'''
-            password
-            '''
-    st.text(password)
+    st.markdown("### Your password is: ")
+    st.markdown(f"### {password}")
