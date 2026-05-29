@@ -35,4 +35,6 @@ if st.button("GENERATOR"):
         password += char
 
     st.text("Your password is: ")
-    st.text(password)
+    st.text(r'''
+            password
+            ''')
