@@ -12,5 +12,6 @@
 
 ## Day 6: Escaping The Maze (Reeborg's World)
 
-## Day 7:
+## Day 7: Hangman
 
+## Day 8: 
