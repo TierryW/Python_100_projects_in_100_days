@@ -79,7 +79,7 @@ def restart_game():
     st.session_state.lives = 6
     st.session_state.game_over = False
 
-st.title("WELCOME TO THE HANGMAN GAME!")
+st.title("WELCOME TO THE HANGMAN GAME")
 
 # Desenho da forca
 st.code(stages_hangman[6 - st.session_state.lives])
