@@ -79,7 +79,7 @@ def restart_game():
     st.session_state.lives = 6
     st.session_state.game_over = False
 
-st.title("WELCOME TO THE HANGMAN GAME")
+st.title("WELCOME TO THE HANGMAN GAME!!!")
 
 # Desenho da forca
 st.code(stages_hangman[6 - st.session_state.lives])
@@ -137,11 +137,11 @@ if not st.session_state.game_over:
 
 # Derrota
 if st.session_state.lives <= 0:
-    st.error(f"❌ YOU LOSE! THE WORD WAS: {st.session_state.word}")
+    st.error(f"❌ YOU LOSE! THE WORD WAS: \t{st.session_state.word}")
 
 # Letras usadas
 st.write("### USED LETTERS:")
-st.write("###, ".join(st.session_state.chosen_letters))
+st.write(", ".join(st.session_state.chosen_letters))
 
 # Reiniciar
 if st.session_state.game_over:
