@@ -79,6 +79,7 @@ def restart_game():
     st.session_state.lives = 6
     st.session_state.game_over = False
 
+st.set_page_config(page_title="Hangman Game", page_icon="🔠")
 st.title("WELCOME TO THE HANGMAN GAME")
 
 # Desenho da forca
