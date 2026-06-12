@@ -99,7 +99,7 @@ st.markdown(f"## {display_word}")
 
 # Vitória
 if "_" not in display_word:
-    st.balloons
+    st.balloons()
     st.success("✔️ YOU WIN!")
     st.session_state.game_over = True
 
@@ -141,7 +141,7 @@ if st.session_state.lives <= 0:
 
 # Letras usadas
 st.write("### USED LETTERS:")
-st.write("### , ".join(st.session_state.chosen_letters))
+st.write("###, ".join(st.session_state.chosen_letters))
 
 # Reiniciar
 if st.session_state.game_over:
