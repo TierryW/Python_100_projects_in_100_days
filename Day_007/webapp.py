@@ -1,57 +1,56 @@
 import streamlit as st
 import random
 
-stages_hangman = [
-'''  +---+
+stages_hangman = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
   |   |
   O   |
- /|\  |
- / \  |
       |
-=========''',
-'''  +---+
+      |
+      |
+=========''', '''
+  +---+
   |   |
   O   |
- /|\  |
- /    |
-      |
-=========''',
-'''  +---+
   |   |
-  O   |
- /|\  |
       |
       |
-=========''',
-'''  +---+
+=========''', '''
+  +---+
   |   |
   O   |
  /|   |
       |
       |
-=========''',
-'''  +---+
+=========''', '''
+  +---+
   |   |
   O   |
-  |   |
+ /|\  |
       |
       |
-=========''',
-'''  +---+
+=========''', '''
+  +---+
   |   |
   O   |
+ /|\  |
+ /    |
       |
-      |
-      |
-=========''',
-'''  +---+
+=========''', '''
+  +---+
   |   |
+  O   |
+ /|\  |
+ / \  |
       |
-      |
-      |
-      |
-=========''',
-]
+=========''']
 
 WORDS = [
     "PYTHON",
@@ -85,7 +84,7 @@ st.title("🎮 Hangman Game")
 # Desenho da forca
 st.code(stages_hangman[6 - st.session_state.lives])
 
-st.write(f"❤️ Lives: {st.session_state.lives}")
+st.write(f"❤️ LIVES: {st.session_state.lives}")
 
 # Palavra escondida
 display_word = ""
@@ -145,6 +144,6 @@ st.write(", ".join(st.session_state.chosen_letters))
 
 # Reiniciar
 if st.session_state.game_over:
-    if st.button("🔄 Play Again"):
+    if st.button("🔄 PLAY AGAIN"):
         restart_game()
         st.rerun()
