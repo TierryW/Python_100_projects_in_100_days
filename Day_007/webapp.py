@@ -79,12 +79,12 @@ def restart_game():
     st.session_state.lives = 6
     st.session_state.game_over = False
 
-st.title("🎮 Hangman Game")
+st.title("WELCOME TO THE HANGMAN GAME")
 
 # Desenho da forca
 st.code(stages_hangman[6 - st.session_state.lives])
 
-st.write(f"❤️ LIVES: {st.session_state.lives}")
+st.write(f"### ❤️ LIVES: {st.session_state.lives}")
 
 # Palavra escondida
 display_word = ""
@@ -99,7 +99,8 @@ st.markdown(f"## {display_word}")
 
 # Vitória
 if "_" not in display_word:
-    st.success("🎉 YOU WIN!")
+    st.balloons
+    st.success("✔️ YOU WIN!")
     st.session_state.game_over = True
 
 # Teclado
@@ -136,11 +137,11 @@ if not st.session_state.game_over:
 
 # Derrota
 if st.session_state.lives <= 0:
-    st.error(f"💀 YOU LOSE! The word was: {st.session_state.word}")
+    st.error(f"❌ YOU LOSE! THE WORD WAS: {st.session_state.word}")
 
 # Letras usadas
-st.write("### Used Letters")
-st.write(", ".join(st.session_state.chosen_letters))
+st.write("### USED LETTERS:")
+st.write("### , ".join(st.session_state.chosen_letters))
 
 # Reiniciar
 if st.session_state.game_over:
