@@ -5,7 +5,7 @@ import hangman_words
 
 # Inicialização
 if "word" not in st.session_state:
-    st.session_state.word = random.choice(hangman_words.words)
+    st.session_state.word = random.choice(hangman_words.words).upper()
 
 if "chosen_letters" not in st.session_state:
     st.session_state.chosen_letters = []
@@ -17,7 +17,7 @@ if "game_over" not in st.session_state:
     st.session_state.game_over = False
 
 def restart_game():
-    st.session_state.word = random.choice(hangman_words.words)
+    st.session_state.word = random.choice(hangman_words.words).upper()
     st.session_state.chosen_letters = []
     st.session_state.lives = 6
     st.session_state.game_over = False
