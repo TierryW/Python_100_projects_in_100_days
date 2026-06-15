@@ -3,7 +3,6 @@ import random
 import webhangman_art
 import hangman_words
 
-# Inicialização
 if "word" not in st.session_state:
     st.session_state.word = random.choice(hangman_words.words).upper()
 
@@ -25,12 +24,10 @@ def restart_game():
 st.set_page_config(page_title="Hangman Game", page_icon="🔠")
 st.title("WELCOME TO THE HANGMAN GAME")
 
-# Desenho da forca
 st.code(webhangman_art.stages_hangman[6 - st.session_state.lives])
 
 st.write(f"### ❤️ LIVES: {st.session_state.lives}")
 
-# Palavra escondida
 display_word = ""
 
 for letter in st.session_state.word:
@@ -41,13 +38,11 @@ for letter in st.session_state.word:
 
 st.markdown(f"## {display_word}")
 
-# Vitória
 if "_" not in display_word:
     st.balloons()
     st.success("✔️ YOU WIN!")
     st.session_state.game_over = True
 
-# Teclado
 if not st.session_state.game_over:
 
     keyboard = [
@@ -79,15 +74,12 @@ if not st.session_state.game_over:
 
                     st.rerun()
 
-# Derrota
 if st.session_state.lives <= 0:
     st.error(f"❌ YOU LOSE! THE WORD WAS: \t{st.session_state.word}")
 
-# Letras usadas
 st.write("### USED LETTERS:")
 st.write(", ".join(st.session_state.chosen_letters))
 
-# Reiniciar
 if st.session_state.game_over:
     if st.button("🔄 PLAY AGAIN"):
         restart_game()
