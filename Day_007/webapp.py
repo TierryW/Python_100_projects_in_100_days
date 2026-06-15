@@ -1,68 +1,11 @@
 import streamlit as st
 import random
-
-stages_hangman = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
-
-WORDS = [
-    "PYTHON",
-    "STREAMLIT",
-    "PROGRAMMING",
-    "HANGMAN",
-    "KEYBOARD"
-]
+import webhangman_art
+import hangman_words
 
 # Inicialização
 if "word" not in st.session_state:
-    st.session_state.word = random.choice(WORDS)
+    st.session_state.word = random.choice(hangman_words.words)
 
 if "chosen_letters" not in st.session_state:
     st.session_state.chosen_letters = []
@@ -74,7 +17,7 @@ if "game_over" not in st.session_state:
     st.session_state.game_over = False
 
 def restart_game():
-    st.session_state.word = random.choice(WORDS)
+    st.session_state.word = random.choice(hangman_words.words)
     st.session_state.chosen_letters = []
     st.session_state.lives = 6
     st.session_state.game_over = False
@@ -83,7 +26,7 @@ st.set_page_config(page_title="Hangman Game", page_icon="🔠")
 st.title("WELCOME TO THE HANGMAN GAME")
 
 # Desenho da forca
-st.code(stages_hangman[6 - st.session_state.lives])
+st.code(webhangman_art.stages_hangman[6 - st.session_state.lives])
 
 st.write(f"### ❤️ LIVES: {st.session_state.lives}")
 
