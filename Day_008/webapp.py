@@ -34,10 +34,9 @@ if st.button("RUN CIPHER"):
     if text.strip() == "":
         st.warning("PLEASE ENTER A MESSAGE!")
     else:
-        result = ceasar(text, shift, st.session_state.scene)
+        result = ceasar(text, shift, direction)
         st.success(f"HERE IS THE {direction}D MESSAGE:")
         st.code(result)
 
 if st.button("RESET"):
-    st.session_state.clear()
     st.rerun()
