@@ -14,4 +14,6 @@
 
 ## Day 7: Hangman
 
-## Day 8: 
+## Day 8: Ceasar Cipher
+
+## Day 9: 
