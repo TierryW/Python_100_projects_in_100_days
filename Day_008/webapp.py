@@ -1,17 +1,16 @@
 import streamlit as st
 import logo_ceasar_cipher
 
-alphabet = [
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
-    'n', 'o', 'p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y', 'z'
-    ]
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y', 'z' ]
 
-st.set_page_config(page_title="Ceasar Cipher", page_icon="📜")
-st.title("CEASAR CIPHER")
+st.set_page_config(page_title="Caesar Cipher", page_icon="📜")
+
+st.title("CAESAR CIPHER")
 st.code(logo_ceasar_cipher.logo)
 
 def ceasar(original_text, shift_amount, encode_or_decode):
-    if encode_or_decode == "decode":
+    if encode_or_decode == "DECODE":
         shift_amount *= -1
 
     cipher_text = ""
@@ -27,33 +26,26 @@ def ceasar(original_text, shift_amount, encode_or_decode):
 
     return cipher_text
 
-if "scene" not in st.session_state:
-    st.session_state.scene = "encode"
+# Escolha da operação
+direction = st.radio(
+    "CHOOSE AN OPTION:",
+    ["ENCODE", "DECODE"],
+    horizontal=True
+)
 
-col1, col2, col3 = st.columns(3)
+text = st.text_input("TYPE YOUR MESSAGE:")
 
-with col1:
-    if st.button("ENCODE"):
-        st.session_state.scene = "encode"
+shift = st.number_input(
+    "TYPE THE SHIFT NUMBER:",
+    min_value=1,
+    step=1
+)
 
-with col2:
-    if st.button("DECODE"):
-        st.session_state.scene = "decode"
+if st.button("RUN CIPHER"):
+    result = ceasar(text.lower(), shift, direction)
 
-with col3:
-    if st.button("RESET"):
-        st.session_state.clear()
-        st.rerun()
+    st.success(f"HERE IS THE {direction}D RESULT:")
+    st.code(result)
 
-st.write(f"Current mode: **{st.session_state.scene}**")
-
-text = st.text_input("Type your message:")
-shift = st.number_input("Type the shift number:", min_value=0, step=1)
-
-if st.button("CIPHER"):
-    if text.strip() == "":
-        st.warning("Please enter a message.")
-    else:
-        result = ceasar(text.lower(), shift, st.session_state.scene)
-        st.success(f"Here is the {st.session_state.scene}d message:")
-        st.code(result)
+if st.button("RESET"):
+    st.rerun()
