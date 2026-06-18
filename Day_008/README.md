@@ -12,6 +12,7 @@ The application allows the user to encrypt and decrypt messages by choosing the 
 - Using loops and conditional statements
 - Applying the modulo operator `%` for cyclic shifts
 - String manipulation
+- Creating user interfaces with `st.button`, `st.radio`, and `st.text_input`
 
 ### 🛠 Technologies Used
 - Python

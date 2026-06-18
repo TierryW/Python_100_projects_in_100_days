@@ -13,7 +13,7 @@ I first developed the game using terminal inputs and later improved it with a vi
 - Managing game states
 - Input validation
 - Modularizing code with external files
-- Managing persistent data with Session State
+- Managing persistent data with `st.session_state`
 
 ### 🛠 Technologies Used
 - Python
