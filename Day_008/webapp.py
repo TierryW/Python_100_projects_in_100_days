@@ -27,16 +27,17 @@ def ceasar(original_text, shift_amount, encode_or_decode):
     return cipher_text
 
 direction = st.radio("CHOOSE AN OPTION:", ["ENCODE", "DECODE"],horizontal=True)
-text = st.text_input("TYPE YOUR MESSAGE:")
+text = st.text_input("TYPE YOUR MESSAGE:").lower()
 shift = st.number_input("TYPE THE SHIFT NUMBER:",min_value=1,step=1)
 
 if st.button("RUN CIPHER"):
     if text.strip() == "":
         st.warning("PLEASE ENTER A MESSAGE!")
     else:
-        result = ceasar(text.lower(), shift, st.session_state.scene)
+        result = ceasar(text, shift, st.session_state.scene)
         st.success(f"HERE IS THE {direction}D MESSAGE:")
         st.code(result)
 
 if st.button("RESET"):
+    st.session_state.clear()
     st.rerun()
