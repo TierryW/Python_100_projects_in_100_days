@@ -1,15 +1,15 @@
 import streamlit as st
 import art
 
-st.set_page_config(page_title="Secret Auction Program", page_icon="💲")
+st.set_page_config(page_title="Auction Program", page_icon="💲")
 st.title("Secret Auction Program")
 st.code(art.logo)
 
 if "bids" not in st.session_state:
     st.session_state.bids = {}
 
-name = st.text_input("What is your name?")
-price = st.number_input("What is your bid? $", min_value=0.0, step=1.0)
+name = st.text_input("WHAT IS YOUR NAME?")
+price = st.number_input("WHAT IS YOUR BID? $", min_value=0.0, step=1.0)
 
 col1, col2 = st.columns(2)
 
