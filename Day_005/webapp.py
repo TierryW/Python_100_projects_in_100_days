@@ -36,3 +36,4 @@ if st.button("GENERATOR"):
 
     st.text("Your password is: ")
     st.code(password)
+

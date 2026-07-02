@@ -43,12 +43,12 @@ with col1:
 
             if len(winners) == 1:
                 st.success(
-                    f"🏆 The winner is **{winners[0]}** "
+                    f"The winner is **{winners[0]}** "
                     f"with a bid of **${highest_bid:.2f}**"
                 )
             else:
                 st.success(
-                    f"🏆 It's a tie! Winners: "
+                    f"It's a tie! Winners: "
                     f"**{', '.join(winners)}** "
                     f"with bids of **${highest_bid:.2f}**"
                 )

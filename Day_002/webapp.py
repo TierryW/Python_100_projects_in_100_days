@@ -21,3 +21,4 @@ if st.button("PERFORM CALCULATION"):
     total = total_bill + (total_bill * tip / 100)
     each_person = total / total_peoples
     st.success(f"Each person should pay: ${round(each_person, 2)}")
+
