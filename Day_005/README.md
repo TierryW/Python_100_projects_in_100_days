@@ -54,7 +54,7 @@ streamlit run Day_5/webapp.py
 Or
 
 ```link
-https://python100projectsin100days-day5.streamlit.app/
+https://python100projectsin100days-day05.streamlit.app/
 ```
 
 ### Thanks for your attention!!
