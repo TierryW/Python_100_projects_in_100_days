@@ -14,3 +14,4 @@ if st.button("GENERATE NAME"):
         st.error("Please fill in all fields!")
     else:
         st.success("Your band name could be: " + city + " " + pet)
+
