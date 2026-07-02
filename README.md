@@ -16,4 +16,6 @@
 
 ## Day 8: Ceasar Cipher
 
-## Day 9: 
+## Day 9: Secret Auction Program
+
+## Day 10: 
