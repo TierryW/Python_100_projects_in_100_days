@@ -251,8 +251,6 @@ function addHistory(expression, result){
 
 }
 
-});
-
 </script>
 </body>
 </html>
