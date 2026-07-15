@@ -27,8 +27,8 @@ html = """
 
         <button class="function" onclick="clearDisplay()">C</button>
         <button class="function" onclick="backspace()">⌫</button>
-        <button class="operator" onclick="append('÷')">÷</button>
-        <button class="operator" onclick="append('X')">X</button>
+        <button class="operator" onclick="append('/')">/</button>
+        <button class="operator" onclick="append('*')">*</button>
 
         <button onclick="append('7')">7</button>
         <button onclick="append('8')">8</button>
