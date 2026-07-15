@@ -1,103 +1,331 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Calculator", page_icon="🧮")
+st.set_page_config(page_title="Calculator",page_icon="🧮",layout="centered")
 
 st.title("🧮 Calculator")
 
-if "display" not in st.session_state:
-    st.session_state.display = ""
+html = """
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+</head>
 
-def add_to_display(value):
-    st.session_state.display += value
+<body>
 
-def backspace():
-    st.session_state.display = st.session_state.display[:-1]
+<div class="calculator">
 
-# Visor
-st.text_input("Display", value=st.session_state.display, disabled=True)
+    <input
+        type="text"
+        id="display"
+        readonly
+        placeholder="0">
 
-col1, col2 = st.columns(2)
+    <div class="buttons">
 
-with col1:
-    if st.button("⌫", use_container_width=True):
-        backspace()
+        <button class="function" onclick="clearDisplay()">C</button>
+        <button class="function" onclick="backspace()">⌫</button>
+        <button class="operator" onclick="append('/')">/</button>
+        <button class="operator" onclick="append('*')">*</button>
 
-with col2:
-    if st.button("C", use_container_width=True):
-        st.session_state.display = ""
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button class="operator" onclick="append('-')">-</button>
 
-col1, col2, col3, col4 = st.columns(4)
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button class="operator" onclick="append('+')">+</button>
 
-with col1:
-    if st.button("7", use_container_width=True):
-        add_to_display("7")
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
 
-with col2:
-    if st.button("8", use_container_width=True):
-        add_to_display("8")
+        <button class="equal" onclick="calculate()">=</button>
 
-with col3:
-    if st.button("9", use_container_width=True):
-        add_to_display("9")
+        <button class="zero" onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
 
-with col4:
-    if st.button("/", use_container_width=True):
-        add_to_display("/")
+    </div>
 
-col1, col2, col3, col4 = st.columns(4)
+    <div class="history">
 
-with col1:
-    if st.button("4", use_container_width=True):
-        add_to_display("4")
+        <h3>History</h3>
 
-with col2:
-    if st.button("5", use_container_width=True):
-        add_to_display("5")
+        <div id="history-list"></div>
 
-with col3:
-    if st.button("6", use_container_width=True):
-        add_to_display("6")
+    </div>
 
-with col4:
-    if st.button("*", use_container_width=True):
-        add_to_display("*")
+</div>
+<style>
 
-col1, col2, col3, col4 = st.columns(4)
+body{
+    margin:0;
+    background:#0f172a;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-with col1:
-    if st.button("1", use_container_width=True):
-        add_to_display("1")
+.calculator{
 
-with col2:
-    if st.button("2", use_container_width=True):
-        add_to_display("2")
+    width:360px;
 
-with col3:
-    if st.button("3", use_container_width=True):
-        add_to_display("3")
+    margin:30px auto;
 
-with col4:
-    if st.button("-", use_container_width=True):
-        add_to_display("-")
+    background:#1e293b;
 
-col1, col2, col3, col4 = st.columns(4)
+    border-radius:20px;
 
-with col1:
-    if st.button("0", use_container_width=True):
-        add_to_display("0")
+    padding:20px;
 
-with col2:
-    if st.button(".", use_container_width=True):
-        add_to_display(".")
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
 
-with col3:
-    if st.button("=", use_container_width=True):
-        try:
-            result = eval(st.session_state.display)
-            st.session_state.display = f"{result:.2f}"
-        except:
-            st.session_state.display = "Error"
+}
 
-with col4:
-    if st.button("+", use_container_width=True):
-        add_to_display("+")
+#display{
+
+    width:100%;
+
+    height:70px;
+
+    box-sizing:border-box;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:#111827;
+
+    color:white;
+
+    font-size:34px;
+
+    text-align:right;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+}
+
+.buttons{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+
+}
+
+button{
+
+    height:65px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    background:#334155;
+
+    color:white;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    filter:brightness(115%);
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+.operator{
+
+    background:#f97316;
+
+}
+
+.operator:hover{
+
+    background:#fb923c;
+
+}
+
+.function{
+
+    background:#475569;
+
+}
+
+.equal{
+
+    background:#22c55e;
+
+    grid-row:span 2;
+
+}
+
+.equal:hover{
+
+    background:#4ade80;
+
+}
+
+.zero{
+
+    grid-column:span 2;
+
+}
+
+.history{
+
+    margin-top:20px;
+
+    background:#111827;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    max-height:180px;
+
+    overflow-y:auto;
+
+}
+
+.history h3{
+
+    margin-top:0;
+
+    color:white;
+
+}
+
+.history-item{
+
+    color:#cbd5e1;
+
+    border-bottom:1px solid #334155;
+
+    padding:6px 0;
+
+}
+
+</style>
+<script>
+
+const display = document.getElementById("display");
+
+const history = document.getElementById("history-list");
+
+function append(value){
+
+    display.value += value;
+
+}
+
+function clearDisplay(){
+
+    display.value = "";
+
+}
+
+function backspace(){
+
+    display.value = display.value.slice(0,-1);
+
+}
+
+function calculate(){
+
+    try{
+
+        const expression = display.value;
+
+        let result = eval(expression);
+
+        result = Number(result.toFixed(2));
+
+        addHistory(expression, result.toFixed(2));
+
+        display.value = result.toFixed(2);
+
+    }
+
+    catch{
+
+        display.value = "Error";
+
+    }
+
+}
+
+function addHistory(expression, result){
+
+    const item = document.createElement("div");
+
+    item.className = "history-item";
+
+    item.innerHTML = `${expression} = ${result}`;
+
+    history.prepend(item);
+
+}
+
+document.addEventListener("keydown", function(event){
+
+    const key = event.key;
+
+    if("0123456789+-*/.".includes(key)){
+
+        append(key);
+
+    }
+
+    else if(key === "Enter"){
+
+        event.preventDefault();
+
+        calculate();
+
+    }
+
+    else if(key === "Backspace"){
+
+        event.preventDefault();
+
+        backspace();
+
+    }
+
+    else if(key === "Escape"){
+
+        clearDisplay();
+
+    }
+
+});
+
+</script>
+</body>
+</html>
+"""
+
+components.html(html, height=750, scrolling=False)
