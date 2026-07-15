@@ -28,23 +28,23 @@ html = """
         <button class="function" onclick="clearDisplay()">C</button>
         <button class="function" onclick="backspace()">⌫</button>
         <button class="operator" onclick="append('/')">/</button>
-        <button class="operator" onclick="append('*')">*</button>
 
         <button onclick="append('7')">7</button>
         <button onclick="append('8')">8</button>
         <button onclick="append('9')">9</button>
-        <button class="operator" onclick="append('-')">-</button>
+        <button class="operator" onclick="append('*')">*</button>
 
         <button onclick="append('4')">4</button>
         <button onclick="append('5')">5</button>
         <button onclick="append('6')">6</button>
-        <button class="operator" onclick="append('+')">+</button>
+        <button class="operator" onclick="append('-')">-</button>
 
         <button onclick="append('1')">1</button>
         <button onclick="append('2')">2</button>
         <button onclick="append('3')">3</button>
-        <button class="equal" onclick="calculate()">=</button>
+        <button class="operator" onclick="append('+')">+</button>
 
+        <button class="equal" onclick="calculate()">=</button>
         <button class="zero" onclick="append('0')">0</button>
         <button onclick="append('.')">.</button>
 
