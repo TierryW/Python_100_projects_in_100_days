@@ -131,13 +131,13 @@ button:active{
 
 .operator{
 
-    background:#FFFF00;
+    background:#FFA07A;
 
 }
 
 .operator:hover{
 
-    background:#FFD700;
+    background:#E9967A;
 
 }
 
