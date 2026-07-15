@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit.components.v1 as components
+import streamlit.components.v1 as components # Inserir página html no streamlit
 
 st.set_page_config(page_title="Calculator",page_icon="🧮",layout="centered")
 
@@ -43,7 +43,6 @@ html = """
         <button onclick="append('1')">1</button>
         <button onclick="append('2')">2</button>
         <button onclick="append('3')">3</button>
-
         <button class="equal" onclick="calculate()">=</button>
 
         <button class="zero" onclick="append('0')">0</button>
@@ -71,15 +70,10 @@ body{
 .calculator{
 
     width:360px;
-
     margin:30px auto;
-
     background:#1e293b;
-
     border-radius:20px;
-
     padding:20px;
-
     box-shadow:0 15px 40px rgba(0,0,0,.45);
 
 }
@@ -87,27 +81,16 @@ body{
 #display{
 
     width:100%;
-
     height:70px;
-
     box-sizing:border-box;
-
     border:none;
-
     outline:none;
-
     border-radius:15px;
-
     background:#111827;
-
     color:white;
-
     font-size:34px;
-
     text-align:right;
-
     padding:15px;
-
     margin-bottom:15px;
 
 }
@@ -115,9 +98,7 @@ body{
 .buttons{
 
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:10px;
 
 }
@@ -125,19 +106,12 @@ body{
 button{
 
     height:65px;
-
     border:none;
-
     border-radius:15px;
-
     font-size:24px;
-
     cursor:pointer;
-
     transition:.2s;
-
     background:#334155;
-
     color:white;
 
 }
@@ -145,7 +119,6 @@ button{
 button:hover{
 
     transform:scale(1.05);
-
     filter:brightness(115%);
 
 }
@@ -158,13 +131,13 @@ button:active{
 
 .operator{
 
-    background:#f97316;
+    background:#FFFF00;
 
 }
 
 .operator:hover{
 
-    background:#fb923c;
+    background:#FFD700;
 
 }
 
@@ -177,7 +150,6 @@ button:active{
 .equal{
 
     background:#22c55e;
-
     grid-row:span 2;
 
 }
@@ -197,15 +169,10 @@ button:active{
 .history{
 
     margin-top:20px;
-
     background:#111827;
-
     border-radius:15px;
-
     padding:15px;
-
     max-height:180px;
-
     overflow-y:auto;
 
 }
@@ -213,7 +180,6 @@ button:active{
 .history h3{
 
     margin-top:0;
-
     color:white;
 
 }
@@ -221,9 +187,7 @@ button:active{
 .history-item{
 
     color:#cbd5e1;
-
     border-bottom:1px solid #334155;
-
     padding:6px 0;
 
 }
@@ -258,13 +222,9 @@ function calculate(){
     try{
 
         const expression = display.value;
-
         let result = eval(expression);
-
         result = Number(result.toFixed(2));
-
         addHistory(expression, result.toFixed(2));
-
         display.value = result.toFixed(2);
 
     }
@@ -280,46 +240,11 @@ function calculate(){
 function addHistory(expression, result){
 
     const item = document.createElement("div");
-
     item.className = "history-item";
-
     item.innerHTML = `${expression} = ${result}`;
-
     history.prepend(item);
 
 }
-
-document.addEventListener("keydown", function(event){
-
-    const key = event.key;
-
-    if("0123456789+-*/.".includes(key)){
-
-        append(key);
-
-    }
-
-    else if(key === "Enter"){
-
-        event.preventDefault();
-
-        calculate();
-
-    }
-
-    else if(key === "Backspace"){
-
-        event.preventDefault();
-
-        backspace();
-
-    }
-
-    else if(key === "Escape"){
-
-        clearDisplay();
-
-    }
 
 });
 
