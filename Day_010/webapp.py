@@ -25,7 +25,7 @@ html = """
 
     <div class="buttons">
 
-        <button class="function" onclick="clearDisplay()">C</button>
+        <button class="function clear" onclick="clearDisplay()">C</button>
         <button class="function" onclick="backspace()">⌫</button>
         <button class="operator" onclick="append('/')">/</button>
 
@@ -44,11 +44,11 @@ html = """
         <button onclick="append('3')">3</button>
         <button class="operator" onclick="append('+')">+</button>
 
-        <button class="equal" onclick="calculate()">=</button>
         <button class="zero" onclick="append('0')">0</button>
         <button onclick="append('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
 
-    </div>
+</div>
 
     <div class="history">
 
@@ -147,10 +147,15 @@ button:active{
 
 }
 
+.clear{
+
+    grid-column: span 2;
+
+}
+
 .equal{
 
     background:#22c55e;
-    grid-row:span 2;
 
 }
 
