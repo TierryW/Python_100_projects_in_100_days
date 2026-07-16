@@ -170,4 +170,4 @@ function calculate(){
 </html>
 """
 
-components.html(html, height=500, scrolling=False)
+components.html(html, height=600, scrolling=False)
