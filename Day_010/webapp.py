@@ -48,16 +48,7 @@ html = """
         <button onclick="append('.')">.</button>
         <button class="equal" onclick="calculate()">=</button>
 
-</div>
-
-    <div class="history">
-
-        <h3>History</h3>
-
-        <div id="history-list"></div>
-
-    </div>
-
+        </div>
 </div>
 <style>
 
@@ -145,31 +136,10 @@ button:active{
     grid-column:span 2;
 }
 
-.history{
-    margin-top:20px;
-    background:#111827;
-    border-radius:15px;
-    padding:15px;
-    max-height:180px;
-    overflow-y:auto;
-}
-
-.history h3{
-    margin-top:0;
-    color:white;
-}
-
-.history-item{
-    color:#cbd5e1;
-    border-bottom:1px solid #334155;
-    padding:6px 0;
-}
-
 </style>
 <script>
 
 const display = document.getElementById("display");
-const history = document.getElementById("history-list");
 
 function append(value){
     display.value += value;
@@ -188,19 +158,11 @@ function calculate(){
         const expression = display.value;
         let result = eval(expression);
         result = Number(result.toFixed(2));
-        addHistory(expression, result.toFixed(2));
         display.value = result.toFixed(2);
     }
     catch{
         display.value = "Error";
     }
-}
-
-function addHistory(expression, result){
-    const item = document.createElement("div");
-    item.className = "history-item";
-    item.innerHTML = `${expression} = ${result}`;
-    history.prepend(item);
 }
 
 </script>
