@@ -63,7 +63,7 @@ body{
     margin:30px auto;
     background:#1e293b;
     border-radius:20px;
-    padding:20px;
+    padding:10px;
     box-shadow:0 15px 35px rgba(0,0,0,.45);
 }
 
