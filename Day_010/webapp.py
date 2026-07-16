@@ -63,8 +63,8 @@ body{
     margin:30px auto;
     background:#1e293b;
     border-radius:20px;
-    padding:10px;
-    box-shadow:0 15px 35px rgba(0,0,0,.45);
+    padding:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
 }
 
 #display{
@@ -170,4 +170,4 @@ function calculate(){
 </html>
 """
 
-components.html(html, height=750, scrolling=False)
+components.html(html, height=500, scrolling=False)
