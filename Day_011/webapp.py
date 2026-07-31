@@ -15,7 +15,6 @@ def draw_hand(cards, hidden=False):
         arts.append(art.splitlines())
 
     linhas = [" ".join(linha) for linha in zip(*arts)]
-
     st.code("\n".join(linhas), language=None)
 
 game = st.session_state.game
@@ -31,12 +30,8 @@ st.title("🃏 Blackjack")
 
 dealer_col, player_col = st.columns(2)
 
-# -------------------------
-# DEALER
-# -------------------------
 with dealer_col:
     st.subheader("Dealer")
-
     draw_hand(computer_cards, hidden=not game_over)
 
     if game_over:
@@ -47,12 +42,8 @@ with dealer_col:
     else:
         st.write("### Score: ?")
 
-# -------------------------
-# PLAYER
-# -------------------------
 with player_col:
     st.subheader("Player")
-
     draw_hand(user_cards)
 
     if user_score == 0:
@@ -64,15 +55,9 @@ st.divider()
 
 _, col1, col2, col3, _ = st.columns([1, 2, 2, 2, 1])
 
-# -------------------------
-# HIT
-# -------------------------
-
 with col1:
-
     if not game_over:
-
-        if st.button("🃏 Hit", use_container_width=True):
+        if st.button("🃏 HIT", use_container_width=True):
             user_cards.append(deal_card())
             user_score = calculate_score(user_cards)
 
@@ -80,31 +65,19 @@ with col1:
                 game["game_over"] = True
             st.rerun()
 
-# -------------------------
-# STAND
-# -------------------------
-
 with col2:
-
     if not game_over:
-
-        if st.button("✋ Stand", use_container_width=True):
+        if st.button("✋ STAND", use_container_width=True):
             dealer_turn(computer_cards)
             game["game_over"] = True
             st.rerun()
 
-# -------------------------
-# NEW GAME
-# -------------------------
-
 with col3:
-
-    if st.button("🔄 New Game", use_container_width=True):
+    if st.button("🔄 RESTART", use_container_width=True):
         st.session_state.game = start_game()
         st.rerun()
 
 game_over = game["game_over"]
-
 user_score = calculate_score(user_cards)
 computer_score = calculate_score(computer_cards)
 
