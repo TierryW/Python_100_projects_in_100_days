@@ -129,6 +129,7 @@ KING = """
 """
 
 BLANKCARD = """
+ -------
 |XXXXXXX|
 |XXXXXXX|
 |XXXXXXX|

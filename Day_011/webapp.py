@@ -8,7 +8,7 @@ st.markdown("""
 <style>
 
 .stApp{
-    background-color: #0B55D1E;
+    background-color: #0B5D1E;
 }
 
 h1,h2,h3{
@@ -31,16 +31,24 @@ def draw_hand(cards, hidden=False):
 
     for i, card in enumerate(cards):
         if hidden and i == 1:
-            arts.append(BLANKCARD.splitlines())
+            art = BLANKCARD
         else:
-            arts.append(CARD_ART[card["rank"]].splitlines())
+            art = CARD_ART[card["rank"]]
 
-    linhas = []
+        arts.append(art.strip("\n").splitlines())
 
-    for i in range(len(arts[0])):
-        linhas.append("   ".join(card[i] for card in arts))
+    max_lines = max(len(art) for art in arts)
 
-    st.code("\n".join(linhas))
+    for art in arts:
+        while len(art) < max_lines:
+            art.append("")
+
+    output = []
+
+    for line in zip(*arts):
+        output.append("   ".join(line))
+
+    st.text("\n".join(output))
 
 game = st.session_state.game
 
