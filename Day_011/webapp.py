@@ -48,8 +48,8 @@ user_cards = game["user_cards"]
 computer_cards = game["computer_cards"]
 game_over = game["game_over"]
 
-user_score = game.calculate_score(user_cards)
-computer_score = game.calculate_score(computer_cards)
+user_score = calculate_score(user_cards)
+computer_score = calculate_score(computer_cards)
 
 st.title("🃏 Blackjack")
 st.header("Dealer")
