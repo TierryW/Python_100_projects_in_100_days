@@ -4,25 +4,6 @@ from cards import CARD_ART, BLANKCARD
 
 st.set_page_config(page_title="Blackjack", page_icon="♠️", layout="wide")
 
-st.markdown("""
-<style>
-
-.stApp{
-    background-color: #0B5D1E;
-}
-
-h1,h2,h3{
-    text-align:center;
-    color:white;
-}
-
-[data-testid="stMarkdownContainer"]{
-    color:white;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
 if "game" not in st.session_state:
     st.session_state.game = start_game()
 
@@ -30,25 +11,12 @@ def draw_hand(cards, hidden=False):
     arts = []
 
     for i, card in enumerate(cards):
-        if hidden and i == 1:
-            art = BLANKCARD
-        else:
-            art = CARD_ART[card["rank"]]
+        art = BLANKCARD if hidden and i == 1 else CARD_ART[card["rank"]]
+        arts.append(art.splitlines())
 
-        arts.append(art.strip("\n").splitlines())
+    linhas = [" ".join(linha) for linha in zip(*arts)]
 
-    max_lines = max(len(art) for art in arts)
-
-    for art in arts:
-        while len(art) < max_lines:
-            art.append("")
-
-    output = []
-
-    for line in zip(*arts):
-        output.append("   ".join(line))
-
-    st.text("\n".join(output))
+    st.code("\n".join(linhas), language=None)
 
 game = st.session_state.game
 
@@ -60,30 +28,41 @@ user_score = calculate_score(user_cards)
 computer_score = calculate_score(computer_cards)
 
 st.title("🃏 Blackjack")
-st.header("Dealer")
-draw_hand(computer_cards, hidden=not game_over)
 
-if game_over:
-    if computer_score == 0:
-        st.subheader("Score: Blackjack")
+dealer_col, player_col = st.columns(2)
+
+# -------------------------
+# DEALER
+# -------------------------
+with dealer_col:
+    st.subheader("Dealer")
+
+    draw_hand(computer_cards, hidden=not game_over)
+
+    if game_over:
+        if computer_score == 0:
+            st.write("### Score: Blackjack")
+        else:
+            st.write(f"### Score: {computer_score}")
     else:
-        st.subheader(f"Score: {computer_score}")
-else:
-    st.subheader("Score: ?")
+        st.write("### Score: ?")
+
+# -------------------------
+# PLAYER
+# -------------------------
+with player_col:
+    st.subheader("Player")
+
+    draw_hand(user_cards)
+
+    if user_score == 0:
+        st.write("### Score: Blackjack")
+    else:
+        st.write(f"### Score: {user_score}")
 
 st.divider()
 
-st.header("Player")
-draw_hand(user_cards)
-
-if user_score == 0:
-    st.subheader("Score: Blackjack")
-else:
-    st.subheader(f"Score: {user_score}")
-
-st.divider()
-
-col1, col2, col3 = st.columns(3)
+_, col1, col2, col3, _ = st.columns([1, 2, 2, 2, 1])
 
 # -------------------------
 # HIT

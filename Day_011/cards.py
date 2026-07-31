@@ -1,142 +1,43 @@
-ACE = """
- -------
-|A      |
-|       |
-|       |
-|       |
-|      A|
- -------
-"""
+def make_card(rank):
+    rank = str(rank)
 
-TWO = """
- -------
-|2      |
-|       |
-|       |
-|       |
-|      2|
- -------
-"""
+    left = rank.ljust(2)
+    right = rank.rjust(2)
 
-THREE = """"
- -------
-|3      |
-|       |
-|       |
-|       |
-|      3|
- ------- 
-"""
+    return f"""
++---------+
+|{left}       |
+|         |
+|         |
+|         |
+|       {right}|
++---------+
+""".strip("\n")
 
-FOUR = """
- -------
-|4      |
-|       |
-|       |
-|       |
-|      4|
- -------
-"""
 
-FIVE = """
- -------
-|5      |
-|       |
-|       |
-|       |
-|      5|
- ------- 
-"""
-
-SIX = """
- -------
-|6      |
-|       |
-|       |
-|       |
-|      6|
- ------- 
-"""
-
-SEVEN = """
- -------
-|7      |
-|       |
-|       |
-|       |
-|      7|
- -------
-"""
-
-EIGHT = """
- -------
-|8      |
-|       |
-|       |
-|       |
-|      8|
- ------- 
-"""
-
-NINE = """
- -------
-|9      |
-|       |
-|       |
-|       |
-|      9|
- ------- 
-"""
-
-TEN = """
- -------
-|10     |
-|       |
-|       |
-|       |
-|     10|
- -------
-"""
-
-JACK = """
- -------
-|J      |
-|       |
-|       |
-|       |
-|      J|
- -------
-"""
-
-QUEEN = """
- -------
-|Q      |
-|       |
-|       |
-|       |
-|      Q|
- ------- 
-"""
-
-KING = """
- -------
-|K      |
-|       |
-|       |
-|       |
-|      K|
- -------
-"""
+ACE = make_card("A")
+TWO = make_card("2")
+THREE = make_card("3")
+FOUR = make_card("4")
+FIVE = make_card("5")
+SIX = make_card("6")
+SEVEN = make_card("7")
+EIGHT = make_card("8")
+NINE = make_card("9")
+TEN = make_card("10")
+JACK = make_card("J")
+QUEEN = make_card("Q")
+KING = make_card("K")
 
 BLANKCARD = """
- -------
-|XXXXXXX|
-|XXXXXXX|
-|XXXXXXX|
-|XXXXXXX|
-|XXXXXXX|
- -------
-"""
++---------+
+|XXXXXXXXX|
+|XXXXXXXXX|
+|XXXXXXXXX|
+|XXXXXXXXX|
+|XXXXXXXXX|
++---------+
+""".strip("\n")
 
 CARD_ART = {
     "A": ACE,
