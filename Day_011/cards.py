@@ -14,7 +14,6 @@ def make_card(rank):
 +---------+
 """.strip("\n")
 
-
 ACE = make_card("A")
 TWO = make_card("2")
 THREE = make_card("3")
