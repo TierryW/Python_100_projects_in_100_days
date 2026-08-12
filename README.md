@@ -22,4 +22,6 @@
 
 ## Day 11: Blackjack
 
-## Day 12: 
+## Day 12: Number Guessing
+
+## Day 13: 
