@@ -24,4 +24,6 @@
 
 ## Day 12: Number Guessing
 
-## Day 13: 
+## Day 13: Debugging — Squashing Bugs in Python
+
+## Day 14: 
