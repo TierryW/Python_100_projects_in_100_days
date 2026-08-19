@@ -26,4 +26,6 @@
 
 ## Day 13: Debugging — Squashing Bugs in Python
 
-## Day 14: 
+## Day 14: Higher or Lower
+
+## Day 15: 
