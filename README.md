@@ -28,4 +28,7 @@
 
 ## Day 14: Higher or Lower
 
-## Day 15: 
+## Day 15: Coffee Machine
+
+## Day 16: 
+
