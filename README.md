@@ -30,5 +30,9 @@
 
 ## Day 15: Coffee Machine
 
-## Day 16: 
+## Day 16: Coffee Machine - OOP
+
+## Day 17: True or False Quiz
+
+## Day 18: 
 
