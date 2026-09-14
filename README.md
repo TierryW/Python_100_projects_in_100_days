@@ -34,5 +34,7 @@
 
 ## Day 17: True or False Quiz
 
-## Day 18: 
+## Day 18: Hirst Spot Painting (GUI)
+
+## Day 19: 
 
