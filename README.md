@@ -36,5 +36,7 @@
 
 ## Day 18: Hirst Spot Painting (GUI)
 
-## Day 19: 
+## Day 19: Turtles Race (GUI)
+
+## Day 20: 
 

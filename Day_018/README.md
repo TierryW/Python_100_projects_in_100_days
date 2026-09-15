@@ -5,10 +5,10 @@
 ### 📌 About The Project
 
 In this project, I developed a **Hirst Spot Painting** in Python using the Turtle graphics library. The application creates a digital artwork composed of colored dots, randomly selecting colors extracted from an inspiration image.
-The project was inspired by the artwork of **Damien Hirst**, known for his colorful spot paintings. I first extracted the main colors from the reference image using the `colorgram` library and then used those colors to recreate a similar composition with Python.
+The project was inspired by the artwork of [Damien Hirst](https://www.artsy.net/artwork/damien-hirst-histidyl-8), known for his colorful spot paintings. I first extracted the main colors from the reference image using the `colorgram` library and then used those colors to recreate a similar composition with Python.
 
 ### 🧠 What I Learned
-- Using the `Turtle` library to create drawings with Python
+- Using the `Turtle` library to create drawings with Python - [Documentation](https://docs.python.org/pt-br/3.14/library/turtle.html)
 - Changing the Turtle drawing speed using `speed()`
 - Using `penup()` and `hideturtle()` to control the Turtle cursor
 - Changing the Turtle's direction using `setheading()`
