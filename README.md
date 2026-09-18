@@ -36,7 +36,11 @@
 
 ## Day 18: Hirst Spot Painting (GUI)
 
-## Day 19: Turtles Race (GUI)
+## Day 19: Turtle Race (GUI)
 
-## Day 20: 
+## Day 20: Snake Game - Part 1
+
+## Day 21: Snake Game - Part 2
+
+## Day 22: 
 
