@@ -1,6 +1,6 @@
 # PYTHON 100 PROJECTS IN 100 DAYS
 
-## Day 19: Snake Game - Part 1
+## Day 20: Snake Game - Part 1
 
 ### 📌 About The Project
 
