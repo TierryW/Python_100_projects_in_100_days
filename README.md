@@ -42,5 +42,7 @@
 
 ## Day 21: Snake Game - Part 2
 
-## Day 22: 
+## Day 22: Pong Game
+
+## Day 23: 
 
