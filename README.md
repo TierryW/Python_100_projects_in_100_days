@@ -38,11 +38,13 @@
 
 ## Day 19: Turtle Race (GUI)
 
-## Day 20: Snake Game - Part 1
+## Day 20: Snake Game - Part 1 (GUI)
 
-## Day 21: Snake Game - Part 2
+## Day 21: Snake Game - Part 2 (GUI)
 
-## Day 22: Pong Game
+## Day 22: Pong Game (GUI)
 
-## Day 23: 
+## Day 23: Turtle Crossing (GUI)
+
+## Day 24:
 
